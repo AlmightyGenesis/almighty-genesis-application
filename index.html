@@ -1,4 +1,4 @@
-z<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang = "en">
 <head>
 <meta charset = "UTF-8">
@@ -72,9 +72,9 @@ body {
    </head>
    <body>
          <div id="3Dparticles-js"></div>
-         <div class="circle"></div>
-         <div class="circle circle2"></div>
-         <div class="circle circle3"></div>
+         <div class="wave"></div>
+         <div class="wave wave2"></div>
+         <div class="wave wave3"></div>
 
          <div class = "post">
          <div class = "company" align = "center" >
@@ -142,7 +142,7 @@ class="submit-btn">Submit Application</button>
 align-items:center;
 z-index:999;
 }
-.form-box{
+.form-box {
   background:#fff;
   padding:25px;
   width:350px;
@@ -150,12 +150,12 @@ z-index:999;
   position:relative;
 }
 .form-box input,
-.form-box select{
+.form-box select {
   width:100%;
   padding:8px;
   margin:8px 0;
 }
-.submit-btn{
+.submit-btn {
   width:100%;
   padding:10px;
   background:#0b2c3d;
@@ -163,13 +163,13 @@ z-index:999;
   border:none;
   cursor:pointer;
 }
-.close-btn{
+.close-btn {
   position:absolute;
   right:10px;
   top:10px;
   cursor:pointer;
   }
-.circle {
+.wave {
  position : fixed;
  bottom : 0;
  left : 0;
@@ -178,49 +178,42 @@ z-index:999;
  background : rgba(255,255,255,0.3);
  opacity : 0.4;
  border-radius : 43%;
- animation : circleMove 10s linear infinite;
+ animation : waveMove 10s linear infinite;
  }
-.circle2 {
+.wave2 {
  bottom : 20px;
  opacity : 0.15;
- animation : circleMove 15s linear infinite;
+ animation : waveMove 15s linear infinite;
  }
-.circle3{
+.wave3 {
  bottom : 40px;
  opacity : 0.15;
- animation : circleMove 20s linear infinite;
+ animation : waveMove 20s linear infinite;
 }
-@keyframes circleMove{
+@keyframes waveMove {
 0% {
 transform:translateX()rotate(0deg);
 }
-100%{
+100% {
 transform:translateX(-50%)rotate(360deg);
 }
 }
-@media(max-width : 768px){
-.post {padding 10%;}
-.company {font-size:22px;}
-.position, .hiring {font-size:18px;}
-.details {font-size:14px;}
-.button {font-size:14px; padding:8px 22px;}
-}
 </style>
 <script>
-function openForm(){
+function openForm() {
   document.getElementById("jobForm").style.display="flex";
 }
-function closeForm(){
+function closeForm() {
   document.getElementById("joForm").style.display="none";
 }
-document.getElementById("jobApplicationForm").addEventListener("submit",function(){
+document.getElementById("jobApplicationForm").addEventListener("submit",function() {
 
 alert("Your Application Was Successfully Completed");
 });
 const resumeInput=document.querySelector('input[name="resume"]');
 const fileNameSpan=document.getElementById('fileName');
-resumeInput.addEventListener('change',function(){
-   if(this.files.length>0){
+resumeInput.addEventListener('change',function() {
+   if(this.files.length>0) +{
    fileNameSpan.textContent="Selectedfile:"+this.files[0].name;
    fileNameSpan.style.color="black";
 } else {
