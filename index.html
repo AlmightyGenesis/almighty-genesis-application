@@ -90,7 +90,7 @@ cursor : pointer;
      Send resume : almightygenesis@gmail.com
 </div>
 <div class="button" onclick="openForm()"> Apply Now </div>
-<div class="form-container" id="job-Form">
+<div class="form-container" id="jobForm">
 <div class="form-box">
 <span class="close-btn" onclick="closeForm()">X</span>
 <h2>Job Application</h2>
@@ -118,7 +118,7 @@ cursor : pointer;
 </select>
       
      <input type="file" name="resume" accept=".pdf, .doc, .docx" required>
-     <span id="filename"></span>
+     <span id="fileName"></span>
 
     <button type="submit"
 class="submit-btn">Submit Application</button>
@@ -166,9 +166,9 @@ margin-top:10px
 }
 .close-btn {
  position:absolute;
-right:10px;
-top:10px;
-cursor:pointer;
+ right:10px;
+ top:10px;
+ cursor:pointer;
 }
 .wave {
 position:fixed;
@@ -201,23 +201,6 @@ transform:translateX(0) rotate(0deg);
 transform:translateX(-50%) rotate(360deg);
 }
 }
-@media(max-width:480px) {
-form-box {
-  width:100%;
-  max-width:100%;
-  padding:15px;
-  }
-.form-box h2 {
-  font-size:14px;
-  }
-.form-box h3 {
-  font-size:14px;
-  }
-.submit-btn {
-  padding:10px;
-  font-size:14px;
-}
-}
 </style>
 <script>
 function openForm(){
@@ -231,10 +214,10 @@ document.getElementById("jobApplicationForm").addEventListener("submit",function
 document.getElementById("jobForm").style.display="none";
 alert("Your Application Was Successfully Completed");
 });
-const resumeInput=documnent.querySelector('input[name="resume"]');
+const resumeInput=document.querySelector('input[name="resume"]');
 const fileNameSpan=document.getElementById('fileName');
 resumeInput.addEventListener('change',function(){
-   if(this.files.length>0)
+   if(this.files.length>0) {
    fileNameSpan.textcontent="Selectedfile:"+this.files[0].name;
    fileNameSpan.style.color="black";
 } else {
