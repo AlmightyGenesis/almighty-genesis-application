@@ -70,7 +70,8 @@ body {
          }
    </style>
    </head>
-   <body>
+   
+<body>
          <div id="3Dparticles-js"></div>
          <div class="wave"></div>
          <div class="wave wave2"></div>
@@ -92,6 +93,7 @@ body {
                         & Business Opportunities <br>
          Send Resume : almightygenesis@gmail.com
 </div>
+
 <div class="button" onclick="openForm()"> Apply Now </div>
 <div class="form-container" id="jobForm">
 <div class="form-box">
@@ -121,53 +123,57 @@ onclick="closeForm()">X</span>
             <option value="customer_support_representive">CUSTOMER SUPPORT REPRESENTATIVE </option>
             <option value="marketing_manager">MARKETING MANAGER</option>
 </select>
-      <input type="file" name="resume" required>
-    <span id="fileName"></span>
+      <input type="file" name="resume" accept=".pdf" required>
+         <p style="color:red;font-size:14px;"> Upload your resume(PDF only, max 2MB).
+              if upload fails, please try again or use laptop.</p>
+    
+      <span id="fileName"></span>
 
       <button type="submit"
-class="submit-btn">Submit Application</button>
+         class="submit-btn">Submit Application</button>
 </form>
 </div>
 </div>
+
 <style>
 .form-container {
- display:none;
- position:fixed;
- top:0;
- left:0;
- width:100%;
- height:100%;
- background:rgba(0,0,0,0.6);
- justify-content:center;
-align-items:center;
-z-index:999;
+ display : none;
+ position : fixed;
+ top : 0;
+ left : 0;
+ width : 100%;
+ height : 100%;
+ background : rgba(0,0,0,0.6);
+ justify-content : center;
+align-items : center;
+z-index : 999;
 }
 .form-box {
-  background:#fff;
-  padding:25px;
-  width:350px;
-  border-radius:10px;
-  position:relative;
+  background : #fff;
+  padding : 25px;
+  width : 350px;
+  border-radius : 10px;
+  position : relative;
 }
 .form-box input,
 .form-box select {
-  width:100%;
-  padding:8px;
-  margin:8px 0;
+  width : 100%;
+  padding : 8px;
+  margin : 8px 0;
 }
 .submit-btn {
-  width:100%;
-  padding:10px;
-  background:#0b2c3d;
-  color:white;
-  border:none;
-  cursor:pointer;
+  width : 100%;
+  padding : 10px;
+  background : #0b2c3d;
+  color : white;
+  border : none;
+  cursor : pointer;
 }
 .close-btn {
-  position:absolute;
-  right:10px;
-  top:10px;
-  cursor:pointer;
+  position : absolute;
+  right : 10px;
+  top : 10px;
+  cursor : pointer;
   }
 .wave {
  position : fixed;
@@ -192,45 +198,46 @@ z-index:999;
 }
 @keyframes waveMove {
 0% {
-transform:translateX()rotate(0deg);
+transform : translateX()rotate(0deg);
 }
 100% {
-transform:translateX(-50%)rotate(360deg);
+transform : translateX(-50%)rotate(360deg);
 }
 }
 @media (max-width:480px) {
 
   body {
-    height:auto;
-    padding:20px 10px;
+    height : auto;
+    padding : 20px 10px;
    }
 .post {
-   width:100%;
-   height:auto;
-   padding:40px;
+   width : 100%;
+   height : auto;
+   padding : 40px;
   }
 .company img {
-  width:100px;
+  width : 100px;
  }
 .company {
-  font-size:22px;
+  font-size : 22px;
  }
 .position {
-  font-size:18px;
+  font-size : 18px;
  }
 .hiring {
-  font-size:18px;
+  font-size : 18px;
  }
 .details {
-  font-size:14px;
-  line-height:1.5;
+  font-size : 14px;
+  line-height : 1.5;
  }
 .button {
-  font-size:16px;
-  padding:10px 20px;
+  font-size : 16px;
+  padding : 10px 20px;
  }
 }
 </style>
+
 <script>
 function openForm() {
   document.getElementById("jobForm").style.display="flex";
