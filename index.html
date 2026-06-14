@@ -86,12 +86,12 @@ body {
          <h2><div class = "position"> BE PART OF ALMIGHTY GENESIS </div></h2>
          <h2><div class = "Hiring"> WE ARE HIRING </div></h2>
         <div class = "details" >
-         Location : KAKINADA <br>
-         Experience : 0-2 years <br>
-         Qualification : Any Degree <br>
-         Requirements : Interested in Marketing and Sales
-                        & Business Opportunities <br>
-         Send Resume : almightygenesis@gmail.com
+         We're Hiring!
+
+        Join our growing team and take the next step in your career. We are looking for passionate, talented, and motivated individuals who are ready to make an impact.
+
+       Be part of our success story and grow with us.
+
 </div>
 
 <div class="button" onclick="openForm()"> Apply Now </div>
@@ -102,10 +102,10 @@ onclick="closeForm()">X</span>
 <h2>Job Application</h2>
 <h3 style="text-align:center;color:#333; margin-bottom:15px;">Candidates Details</h3>
 
-  <form id="jobApplicationForm" method="POST" data-netlify="true">
+  <form id="jobApplicationForm" name="jobApplicationForm" method="POST" data-netlify="true" action="/success.html">
   <input type="hidden" name="form-name" value="jobApplicationForm">
-    <input type="text" name="fullname" placeholder="Full Name" required>
-    <input type="Email" name="Email" placeholder="Email Address" required>
+    <input type="text" name="fullname" placeholder="Name of the Candidate" required>
+    <input type="Email" name="Email" placeholder="Email Id" required> 
     
 <div style="display:flex; gap:10px; align-items:center;">
 <select name="countryCode" required>
@@ -113,8 +113,9 @@ onclick="closeForm()">X</span>
 <option value="+1"> +1</option>
 <option value="+44">+44</option>
 </select>
- <input type="tel" name="Phone" id="Phone" placeholder="Phone Number" required maxlength="10" pattern="[0-9]{10}" title="please enter exactly 10 digits">
+ <input type="tel" name="Mobile" id="Mobile" placeholder="Mobile" required maxlength="10" pattern="[0-9]{10}" title="please enter exactly 10 digits">
 </div>
+          <label style="color:black;">Position<span style="color:red">*</span></label>
           <select name="position" required>
             <option value= "" disabled selected>Select Position</option> 
             <option value="business_development_executive">BUSINESS DEVELOPMENT EXECUTIVE</option>
@@ -123,14 +124,19 @@ onclick="closeForm()">X</span>
             <option value="customer_support_representive">CUSTOMER SUPPORT REPRESENTATIVE </option>
             <option value="marketing_manager">MARKETING MANAGER</option>
 </select>
-      <input type="file" name="resume" accept=".pdf" required>
-         <p style="color:red;font-size:14px;"> Upload your resume(PDF only, max 2MB).
-              if upload fails, please try again or use laptop.</p>
-    
-      <span id="fileName"></span>
+      
+      <div class="resume-box">
+ <label class="resume-label">Resume<span style="color:red">*</span></label>
+<div class="upload-box">
+ <p class="upload-text">Upload 1 supported file. max 2MB.</p>
+     
+    <label class="upload-btn">
+      <input type="file" name="resume" accept=".pdf" required hidden>
+        Add file
+</label>
+<span id="fileName"></span>
 
-      <button type="submit"
-         class="submit-btn">Submit Application</button>
+  <button type="submit" class="submit-btn">Submit Application</button>
 </form>
 </div>
 </div>
@@ -161,6 +167,44 @@ z-index : 999;
   padding : 8px;
   margin : 8px 0;
 }
+.form-box label {
+   font-size:18px;
+   color:black;
+   margin-top:10px;
+   display:block;
+  }
+.required {
+  color:black;
+  margin-left:3px;
+}
+.resume-box {
+  margin-top:10px;
+}
+.resume-label {
+  font-size:16px;
+  color:black;
+  display:block;
+  margin-bottom:8px;
+ }
+.upload-box {
+  padding:15px;
+  border-radius:9px;
+  background:#fafafa;
+ }
+.upload-text {
+  font-size:13px;
+  color:black;
+  margin-bottom:10px;
+ }
+.upload-btn {
+   display:inline-block;
+   padding:10px 15px;
+   cursor:pointer;
+   background:white;
+  }
+.upload-btn:hover {
+   background:#f0f0f0;
+  }
 .submit-btn {
   width : 100%;
   padding : 10px;
@@ -205,8 +249,7 @@ transform : translateX(-50%)rotate(360deg);
 }
 }
 @media (max-width:480px) {
-
-  body {
+body {
     height : auto;
     padding : 20px 10px;
    }
@@ -243,23 +286,21 @@ function openForm() {
   document.getElementById("jobForm").style.display="flex";
 }
 function closeForm() {
-  document.getElementById("joForm").style.display="none";
+  document.getElementById("jobForm").style.display="none";
 }
-document.getElementById("jobApplicationForm").addEventListener("submit",function() {
-
+document.getElementById("jobApplicationForm").addEventListener("submit",function(e){
 alert("Your Application Was Successfully Completed");
 });
 const resumeInput=document.querySelector('input[name="resume"]');
 const fileNameSpan=document.getElementById('fileName');
 resumeInput.addEventListener('change',function() {
-   if(this.files.length>0) {
-   fileNameSpan.textContent="Selectedfile:"+this.files[0].name;
-   fileNameSpan.style.color="black";
+    if(this.files.length>0) {
+fileNameSpan.textContent="Selectedfile:"+this.files[0].name;
+fileNameSpan.style.color="blue";
 } else {
-   fileNameSpan.textContent="";
+fileNameSpan.textContent="";
 }
 });
-
 </script>
 </head>
 </html>
